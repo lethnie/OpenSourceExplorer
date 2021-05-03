@@ -1,0 +1,47 @@
+﻿.repository-item {
+    border-width: 1px;
+    border-color: rgb(147, 149, 151);
+    border-style: dotted;
+    border-radius: .25rem;
+    margin: 10px 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 5px;
+    width: 100%;
+}
+
+.repository-title {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 5px;
+    overflow-wrap: break-word;
+}
+
+.repository-description {
+    margin: 5px;
+}
+
+.repository-language {
+    background-color: rgb(147, 149, 151);
+    margin: 5px;
+}
+
+a.repository-language:hover {
+    color: rgb(245, 233, 77);
+}
+
+.repository-icon {
+    color: rgb(147, 149, 151);
+    min-width: 30px;
+}
+
+.repository-stats {
+    color: rgb(147, 149, 151);
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.repository-stats-item {
+    display: inline;
+    margin: 5px;
+}

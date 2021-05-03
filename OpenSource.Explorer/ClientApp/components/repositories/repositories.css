@@ -1,0 +1,9 @@
+﻿.filters-container {
+    position: sticky;
+    top: 110px;
+    left: 0px;
+}
+
+.repositories-container {
+    padding-top: 100px;
+}

@@ -1,0 +1,16 @@
+﻿.header-container {
+    background-color: #fdfadb;
+    display: table;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+}
+
+.header {
+    display: table-cell;
+    font-family: Consolas, monospace;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,0 +1,10 @@
+﻿.repositories-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.repositories-spinner {
+    margin: 20px;
+    color: rgb(147, 149, 151) !important;
+}

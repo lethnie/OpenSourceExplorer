@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSource.Explorer", "OpenSource.Explorer\OpenSource.Explorer.csproj", "{611A792B-D7CE-49EC-94D9-970844528D43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSource.GitHub.Core", "OpenSource.GitHub.Core\OpenSource.GitHub.Core.csproj", "{6B8F105F-79AE-467B-B7A8-99E0BEDFE9AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSource.GitHub.GraphQL", "OpenSource.GitHub.GraphQL\OpenSource.GitHub.GraphQL.csproj", "{DD5CF6BE-2BD5-4AE9-A77D-493933A2C654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSource.Models", "OpenSource.Models\OpenSource.Models.csproj", "{5E956A44-9DE5-4B7D-A995-30F59F7469DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{611A792B-D7CE-49EC-94D9-970844528D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611A792B-D7CE-49EC-94D9-970844528D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611A792B-D7CE-49EC-94D9-970844528D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611A792B-D7CE-49EC-94D9-970844528D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B8F105F-79AE-467B-B7A8-99E0BEDFE9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8F105F-79AE-467B-B7A8-99E0BEDFE9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8F105F-79AE-467B-B7A8-99E0BEDFE9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8F105F-79AE-467B-B7A8-99E0BEDFE9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD5CF6BE-2BD5-4AE9-A77D-493933A2C654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5CF6BE-2BD5-4AE9-A77D-493933A2C654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5CF6BE-2BD5-4AE9-A77D-493933A2C654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5CF6BE-2BD5-4AE9-A77D-493933A2C654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E956A44-9DE5-4B7D-A995-30F59F7469DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E956A44-9DE5-4B7D-A995-30F59F7469DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E956A44-9DE5-4B7D-A995-30F59F7469DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E956A44-9DE5-4B7D-A995-30F59F7469DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41F9ED24-D16B-4E1F-9870-247A2A146D3F}
+	EndGlobalSection
+EndGlobal
