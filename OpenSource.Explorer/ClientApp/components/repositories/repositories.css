@@ -4,6 +4,8 @@
     left: 0px;
 }
 
-.repositories-container {
-    padding-top: 100px;
+@media screen and (min-width: 576px) {
+    .repositories-container {
+        padding-top: 100px;
+    }
 }

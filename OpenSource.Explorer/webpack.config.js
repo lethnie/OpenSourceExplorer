@@ -11,7 +11,6 @@ var config = {
     entry: [
         srcFolder + "index.js"
     ],
-    devtool: "source-map",
     output: {
         filename: "bundle.js",
         publicPath: 'assets/',
@@ -50,6 +49,8 @@ module.exports = (env, argv) => {
                 parallel: true
             })]
         };
+    } else {
+        config.devtool = "source-map";
     }
     return config;
 };

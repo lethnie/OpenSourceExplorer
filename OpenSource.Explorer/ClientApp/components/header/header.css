@@ -3,7 +3,13 @@
     display: table;
     height: 100px;
     width: 100%;
-    position: fixed;
+    z-index: 2;
+}
+
+@media screen and (min-width: 576px) {
+    .header-container {
+        position: fixed;
+    }
 }
 
 .header {
