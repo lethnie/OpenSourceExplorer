@@ -1,11 +1,24 @@
-﻿.filters-container {
-    position: sticky;
-    top: 110px;
-    left: 0px;
+﻿@media screen and (min-width: 576px) {
+    .filters-container {
+        position: sticky;
+        left: 0px;
+        top: 110px;
+    }
 }
 
 @media screen and (min-width: 576px) {
     .repositories-container {
         padding-top: 100px;
     }
+}
+
+.repositories-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.repositories-spinner {
+    margin: 20px;
+    color: rgb(147, 149, 151) !important;
 }

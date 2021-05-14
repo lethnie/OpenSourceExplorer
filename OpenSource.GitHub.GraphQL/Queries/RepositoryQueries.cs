@@ -50,5 +50,14 @@
     }
   }
 }";
+
+        /// <summary>
+        /// Template of the query to get number of repositories for query.
+        /// </summary>
+        internal const string REPOSITORIES_COUNT_QUERY = @"query($query: String!) {
+  search(type: REPOSITORY, query: $query, first: 1) {
+    repositoryCount
+  }
+}";
     }
 }

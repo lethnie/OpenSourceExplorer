@@ -14,5 +14,12 @@ namespace OpenSource.GitHub.GraphQL
         /// <param name="parameters">Search and pagination parameters.</param>
         /// <returns>Page containing list of repositories.</returns>
         Task<RepositoryPage> GetRepositoriesAsync(RepositoryParameters parameters);
+
+        /// <summary>
+        /// Gets random repository according to search parameters.
+        /// </summary>
+        /// <param name="parameters">Search parameters.</param>
+        /// <returns>Random repository.</returns>
+        Task<Repository> GetRandomRepositoryAsync(RepositoryParameters parameters);
     }
 }

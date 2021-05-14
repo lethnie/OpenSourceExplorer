@@ -42,6 +42,6 @@ a.repository-language:hover {
 }
 
 .repository-stats-item {
-    display: inline;
+    display: inline-block;
     margin: 5px;
 }

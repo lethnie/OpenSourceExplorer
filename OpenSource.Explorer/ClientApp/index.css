@@ -33,6 +33,7 @@
 .btn-search:focus {
     background-color: rgb(147, 149, 151);
     border-color: rgb(147, 149, 151);
+    margin: 5px;
 }
 
 .btn-search:hover {

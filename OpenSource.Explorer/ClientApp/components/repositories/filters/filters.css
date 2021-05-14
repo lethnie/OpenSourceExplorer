@@ -103,3 +103,11 @@ ul.select-search__options {
 .DayPickerInput {
     width: 100%;
 }
+
+.btn-icon {
+    color: #fff;
+}
+
+.btn-search {
+    float: right;
+}

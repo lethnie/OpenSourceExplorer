@@ -11,7 +11,7 @@ namespace OpenSource.GitHub.Models
         public DateTime? LastUpdateAfter { get; set; }
         public int? MinNumberOfStars { get; set; }
 
-        public int PageSize { get; set; }
-        public int PageNumber { get; set; }
+        public int? PageSize { get; set; }
+        public int? PageNumber { get; set; }
     }
 }

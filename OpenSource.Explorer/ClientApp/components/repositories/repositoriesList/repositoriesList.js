@@ -1,8 +1,7 @@
 ﻿import React from 'react';
-import { Pagination, PaginationItem, PaginationLink, Spinner } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import Repository from '../repository/repository';
 import { PAGE_SIZE } from '../../../constants';
-import './repositoriesList.css';
 
 export default class RepositoriesList extends React.Component {
     constructor(props) {
@@ -40,9 +39,7 @@ export default class RepositoriesList extends React.Component {
     };
 
     render() {
-        let repositories = this.props.loading ?
-            <Spinner className="repositories-spinner" style={{ width: '10rem', height: '10rem' }} /> :
-            this.props.repositoryPage ?
+        let repositories = this.props.repositoryPage ?
                 this.props.repositoryPage.repositories.map(item => {
                     return (
                         <Repository key={item.key} item={item} />
@@ -113,10 +110,10 @@ export default class RepositoriesList extends React.Component {
             }
         }
         return (
-            <div id="repositories" className="repositories-content">
+            <>
                 {repositories}
                 {pagination}
-            </div>
+            </>
         );
     }
 }

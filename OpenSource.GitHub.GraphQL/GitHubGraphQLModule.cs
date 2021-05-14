@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OpenSource.GitHub.Core.Cache;
 using OpenSource.GitHub.Core.Configuration;
 using OpenSource.GitHub.Core.DependencyInjection;
 
@@ -19,6 +20,7 @@ namespace OpenSource.GitHub.GraphQL
             var graphQLConfiguration = configuration.Get<GraphQLOptions>();
 
             services.AddSingleton(_ => new GitHubGraphQLHttpClient(graphQLConfiguration));
+            services.AddScoped<ICacheService, MemoryCacheService>();
             services.AddScoped<IRepositoryService, RepositoryService>();
         }
     }

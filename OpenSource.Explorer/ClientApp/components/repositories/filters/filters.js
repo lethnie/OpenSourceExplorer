@@ -3,6 +3,8 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import SelectSearch from 'react-select-search';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDice } from '@fortawesome/free-solid-svg-icons';
 import languages from './languages';
 import 'react-day-picker/lib/style.css';
 import './filters.css';
@@ -19,7 +21,9 @@ export default class Filters extends React.Component {
             minNumberOfStars: undefined,
             lastUpdateAfter: undefined
         };
+        this.getFilters = this.getFilters.bind(this);
         this.search = this.search.bind(this);
+        this.tryYourLuck = this.tryYourLuck.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleLanguageChange = this.handleLanguageChange.bind(this);
         this.handleLastUpdateAfterChange = this.handleLastUpdateAfterChange.bind(this);
@@ -30,14 +34,22 @@ export default class Filters extends React.Component {
     }
 
     search() {
-        this.props.search({
+        this.props.search(this.getFilters());
+    }
+
+    tryYourLuck() {
+        this.props.tryYourLuck(this.getFilters());
+    }
+
+    getFilters() {
+        return {
             text: this.state.text,
             language: this.state.language,
             hasGoodFirstIssues: this.state.hasGoodFirstIssues,
             hasHelpWantedIssues: this.state.hasHelpWantedIssues,
             minNumberOfStars: this.state.minNumberOfStars,
             lastUpdateAfter: this.state.lastUpdateAfter
-        });
+        };
     }
 
     handleInputChange(event) {
@@ -52,7 +64,7 @@ export default class Filters extends React.Component {
 
     handleLanguageChange(value) {
         this.setState({
-            language: value
+            language: value === '' ? null : value
         });
     }
 
@@ -74,6 +86,8 @@ export default class Filters extends React.Component {
 
     render() {
         let options = languages.map(l => { return { name: l, value: l }; });
+        // add empty value to remove selection
+        options.unshift({ name: '', value: '' });
         return (
             <Form className={this.props.className}>
                 <FormGroup>
@@ -157,7 +171,12 @@ export default class Filters extends React.Component {
                         }}
                     />
                 </FormGroup>
-                <Button onClick={this.search} className="btn-search">Search</Button>
+                <div className="btn-container">
+                    <Button onClick={this.search} className="btn-search">Search</Button>
+                    <Button onClick={this.tryYourLuck} className="btn-search" title="Try your luck!">
+                        <FontAwesomeIcon icon={faDice} className="btn-icon" />
+                    </Button>
+                </div>
             </Form>
         );
     }
