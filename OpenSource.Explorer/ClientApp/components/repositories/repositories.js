@@ -50,6 +50,7 @@ export default class Repositories extends React.Component {
                 return response.json();
             })
             .then((data) => {
+                data.pageNumber = page.pageNumber;
                 this.setState({ repository: null, repositoryPage: data, loading: false, error: null });
             }).catch((err) => {
                 this.handleError(err);

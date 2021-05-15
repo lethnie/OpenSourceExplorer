@@ -102,3 +102,7 @@
     white-space: nowrap;
     border: 0;
 }
+
+.DayPickerInput-OverlayWrapper {
+    top: -380px;
+}

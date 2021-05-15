@@ -7,7 +7,6 @@ export default class RepositoriesList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pageNumber: 1,
             pageSize: PAGE_SIZE
         };
         this.goToPage = this.goToPage.bind(this);
@@ -24,10 +23,6 @@ export default class RepositoriesList extends React.Component {
         if (index < 1 || index > pageCount) {
             return;
         }
-
-        this.setState({
-            pageNumber: index
-        });
 
         this.props.goToPage({
             pageNumber: index,
@@ -49,7 +44,7 @@ export default class RepositoriesList extends React.Component {
         if (this.props.repositoryPage) {
             let pageNumbers = [];
             let pageCount = Math.ceil(this.props.repositoryPage.totalCount / this.state.pageSize);
-            let currentPage = this.state.pageNumber;
+            let currentPage = this.props.repositoryPage.pageNumber;
             const maxShowPages = 3; // on both sides from current
             const approxPageNumWidth = 50;
             const defaultButtonsCount = 7; // prev, next, first, last, + two breaks (...)
