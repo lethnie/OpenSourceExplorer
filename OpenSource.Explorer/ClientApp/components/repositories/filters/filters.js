@@ -70,7 +70,7 @@ export default class Filters extends React.Component {
 
     handleLastUpdateAfterChange(value) {
         this.setState({
-            lastUpdateAfter: formatDate(value, DATE_FORMAT)
+            lastUpdateAfter: value ? formatDate(value, DATE_FORMAT) : value
         });
     }
 

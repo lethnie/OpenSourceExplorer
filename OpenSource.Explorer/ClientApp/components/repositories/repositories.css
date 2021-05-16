@@ -1,4 +1,4 @@
-﻿@media screen and (min-width: 576px) {
+﻿@media screen and (min-width: 576px) and (min-height: 590px) {
     .filters-container {
         position: sticky;
         left: 0px;
