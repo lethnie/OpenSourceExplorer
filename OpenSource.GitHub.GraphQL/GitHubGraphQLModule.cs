@@ -21,6 +21,7 @@ namespace OpenSource.GitHub.GraphQL
 
             services.AddSingleton(_ => new GitHubGraphQLHttpClient(graphQLConfiguration));
             services.AddScoped<ICacheService, MemoryCacheService>();
+            services.AddScoped<IRepositoryApiService, RepositoryApiService>();
             services.AddScoped<IRepositoryService, RepositoryService>();
         }
     }

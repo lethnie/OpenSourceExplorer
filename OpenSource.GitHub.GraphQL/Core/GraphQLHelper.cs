@@ -5,37 +5,16 @@ namespace OpenSource.GitHub.GraphQL
 {
     internal static class GraphQLHelper
     {
-        private static readonly Random Random = new Random();
+        private const string CURSOR_PREFIX = "cursor:";
 
         /// <summary>
-        /// Calculates cursor identifier for requested page.
+        /// Gets cursor for given index.
         /// </summary>
-        /// <param name="pageSize">Page size.</param>
-        /// <param name="pageNumber">Number of requested page.</param>
-        /// <returns>Cursor identifier of the last value on previous page, null if current page is the first page.</returns>
-        public static string GetAfterCursorForPage(int pageSize, int pageNumber)
+        /// <param name="index">Element index.</param>
+        /// <returns>Cursor value.</returns>
+        public static string GetCursor(int index)
         {
-            int lastValueIndex = pageSize * (pageNumber - 1);
-            if (lastValueIndex <= 0)
-            {
-                return null;
-            }
-            return Convert.ToBase64String(Encoding.UTF8.GetBytes($"cursor:{lastValueIndex}"));
-        }
-
-        /// <summary>
-        /// Gets random cursor value.
-        /// </summary>
-        /// <param name="maxValue">Total count of elements.</param>
-        /// <returns>Random cursor value.</returns>
-        public static string GetRandomCursor(int maxValue)
-        {
-            var index = Random.Next(maxValue - 1);
-            if (index <= 0)
-            {
-                return null;
-            }
-            return Convert.ToBase64String(Encoding.UTF8.GetBytes($"cursor:{index}"));
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes($"{CURSOR_PREFIX}{index}"));
         }
     }
 }

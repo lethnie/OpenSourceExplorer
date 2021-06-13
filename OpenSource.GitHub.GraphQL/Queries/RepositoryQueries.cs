@@ -24,7 +24,7 @@
           description,
           stargazerCount,
           forkCount,
-          createdAt ,
+          createdAt,
           updatedAt,
           hasIssuesEnabled,
           primaryLanguage { name },
@@ -41,13 +41,7 @@
         }
       }
     },
-    repositoryCount,
-    pageInfo {
-      startCursor,
-      endCursor,
-      hasNextPage,
-      hasPreviousPage
-    }
+    repositoryCount
   }
 }";
 
@@ -57,6 +51,21 @@
         internal const string REPOSITORIES_COUNT_QUERY = @"query($query: String!) {
   search(type: REPOSITORY, query: $query, first: 1) {
     repositoryCount
+  }
+}";
+
+        /// <summary>
+        /// Template of the query to get repositories stars count.
+        /// </summary>
+        internal const string REPOSITORY_STARS_QUERY = @"query($query: String!, $first: Int, $after: String) {
+  search(type: REPOSITORY, query: $query, first: $first, after: $after) {
+    edges {
+      node {
+        ... on Repository {
+          stargazerCount
+        }
+      }
+    }
   }
 }";
     }

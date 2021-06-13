@@ -11,15 +11,6 @@ namespace OpenSource.GitHub.GraphQL
     {
         public List<Edge> Edges { get; set; }
         public int RepositoryCount { get; set; }
-        public PageInfo PageInfo { get; set; }
-    }
-
-    internal class PageInfo
-    {
-        public string StartCursor { get; set; }
-        public string EndCursor { get; set; }
-        public bool HasNextPage { get; set; }
-        public bool HasPreviousPage { get; set; }
     }
 
     internal class ArrayResult
