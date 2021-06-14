@@ -14,12 +14,12 @@ export default class Filters extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: undefined,
-            language: undefined,
+            text: '',
+            language: '',
             hasGoodFirstIssues: true,
             hasHelpWantedIssues: true,
-            minNumberOfStars: undefined,
-            lastUpdateAfter: undefined
+            minNumberOfStars: '',
+            lastUpdateAfter: ''
         };
         this.getFilters = this.getFilters.bind(this);
         this.search = this.search.bind(this);
@@ -43,12 +43,14 @@ export default class Filters extends React.Component {
 
     getFilters() {
         return {
-            text: this.state.text,
-            language: this.state.language,
+            text: this.state.text === '' ? undefined : this.state.text,
+            language: this.state.language === '' ? undefined : this.state.language,
             hasGoodFirstIssues: this.state.hasGoodFirstIssues,
             hasHelpWantedIssues: this.state.hasHelpWantedIssues,
-            minNumberOfStars: this.state.minNumberOfStars,
-            lastUpdateAfter: this.state.lastUpdateAfter
+            minNumberOfStars: this.state.minNumberOfStars === '' ?
+                undefined : this.state.minNumberOfStars,
+            lastUpdateAfter: this.state.lastUpdateAfter === '' ?
+                undefined : this.state.lastUpdateAfter
         };
     }
 
@@ -64,13 +66,13 @@ export default class Filters extends React.Component {
 
     handleLanguageChange(value) {
         this.setState({
-            language: value === '' ? null : value
+            language: value
         });
     }
 
     handleLastUpdateAfterChange(value) {
         this.setState({
-            lastUpdateAfter: value ? formatDate(value, DATE_FORMAT) : value
+            lastUpdateAfter: value && value !== '' ? formatDate(value, DATE_FORMAT) : value
         });
     }
 
